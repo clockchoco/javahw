@@ -3,8 +3,8 @@ import java.awt.event.*;
 import java.awt.*;
 
 public class HW1 extends JFrame {
-    private JLabel imageLabel;
-    private ImageIcon[] images = new ImageIcon[4];
+    private final JLabel imageLabel;
+    private final ImageIcon[] images = new ImageIcon[4];
     int currentImageIdx;
     public HW1() {
         setTitle("Problem");

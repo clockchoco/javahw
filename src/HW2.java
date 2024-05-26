@@ -1,11 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
-//import java.awt.event.*;
+import java.awt.event.*;
 
 public class HW2 extends JFrame {
-    private JButton countBtn = new JButton("test button");
-    private JLabel countLabel = new JLabel("0");
+    private final JButton countBtn = new JButton("test button");
+    private final JLabel countLabel = new JLabel("0");
     private int counter = 0;
+
     public HW2() {
         setTitle("CheckBox");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,16 +28,24 @@ public class HW2 extends JFrame {
         });
         hideBtn.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
-                    if (e.getStateChange() == ItemEvent.SELECTED)
-                        countBtn.setVisible(false);
-                    else
-                        countBtn.setVisible(true);
-                }
+
+                if (e.getStateChange() == ItemEvent.SELECTED)
+                    countBtn.setVisible(false);
+                else
+                    countBtn.setVisible(true);
+
             }
         });
-
+        countBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                counter++;
+                countLabel.setText(Integer.toString(counter));
+            }
+        });
+        setSize(250, 150);
+        setVisible(true);
     }
+
     public static void main(String[] args) {
         new HW2();
     }
