@@ -7,7 +7,6 @@ public class HW1 extends JFrame {
     private final ImageIcon[] images = new ImageIcon[4];
     int currentImageIdx;
     public HW1() {
-        setTitle("Problem");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Container c = getContentPane();
         c.setLayout(new BorderLayout());
@@ -15,7 +14,8 @@ public class HW1 extends JFrame {
             images[i] = getScaledImage("images/image" + i + ".jpg");
         }
         currentImageIdx = 0;
-        imageLabel = new JLabel(images[currentImageIdx]);
+        imageLabel = new JLabel(images[currentImageIdx]);setTitle("Problem");
+
         c.add(imageLabel, BorderLayout.CENTER);
         c.add(new MenuPanel(), BorderLayout.SOUTH);
         setSize(300, 400);
